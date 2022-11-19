@@ -1,0 +1,33 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+   <script>
+          function display()
+		  {
+		  var x= document.a.uname.value;
+		   
+		   var y= document.a.pswrd.value;
+		 
+		  
+		  alert("username :" + x +"pasword :" +y);
+		   
+		  }
+		  
+   </script>
+</head>
+
+<body>
+       <form name="a" onsubmit="display()">
+  USERNAME: <input type="text" name="uname" id="user"/> <br><br>
+  PASSWORD: <input type="password" name="pswrd" id="pwd"/> <br><br>
+  
+  <input type="submit" value="click"/>
+  
+</form>
+</body>
+</html>

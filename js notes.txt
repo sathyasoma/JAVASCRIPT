@@ -1,0 +1,82 @@
+ javascript:
+============
+variables
+flow controls
+functions
+objects
+array
+String
+date
+events
+validations
+
+
+   purpose javascript is making your page as dynamic.
+
+javascript is a scripting langauges
+
+ we hava different js frameworks in the market
+   reactjs, angularjs, express,....
+   
+
+varibales:
+----------
+name of storage location
+
+java: 
+----
+        static typing(we need to write datatype evry time)
+		  int marks=18;
+js:
+---
+   dynamic typing 
+              var marks=67;
+
+
+
+
+
+
+
+classes:
+----------
+
+class test{
+
+constructor(){
+
+   console.log("i am from constructor");
+}
+
+}
+
+new test();  // object creation
+
+
+o/p:  i am from constructor
+
+* at the time object creation only the constructor going to be called, will get the output
+
+
+
+
+eg:
+---
+
+class test{
+
+constructor(mum1,num2){
+
+   this.num1=num1;
+   this.num2=num2;
+}
+addition(){
+
+  console.log(this.num1+this.num2);
+}
+}
+
+let ref=new test(10,30);  
+
+ref.addition();
+

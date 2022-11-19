@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- to change-->
+
+<html>
+<head>
+
+</head>
+<body>
+
+<script>
+var y=30; //global variable
+
+function addition() //function declaration
+{
+var x=123; //local variable
+
+document.write(x+y); // system.out.println();
+document.write("<br>");
+document.write(y); //printing global variable 30
+}
+document.write("<br><br>");
+
+function addition1()
+{
+ var x= 20; //local variable
+ 
+ document.write(x+y); //50
+ document.write("<br>");
+ document.write(y);  // global variable 30
+}
+
+addition(); // calling function
+document.write("<br>");
+addition1();  //calling function
+
+</script>
+</body>
+
+</html>
