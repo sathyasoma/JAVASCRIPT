@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript">
+function valid()
+{
+var x=document.myform.name.value;
+//var a=/[a-z]+[a-z]*@gmail.com/;
+//var a=/[0-9]{10}/;
+var a=/[7,8,9]+[0-9]{9}/;
+if(x.match(a))
+{
+alert("done");
+}
+else
+{
+alert("failed");
+}
+
+}
+
+
+
+</script>
+</head>
+<body>
+<form name="myform">
+<input type="text" name="name">
+
+<input type="submit" onclick="valid()"/>
+
+
+</form>
+
+
+</body>
+</html>

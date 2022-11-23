@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	background-color: lightblue;
+}
+a{
+text-decoration: none;
+}
+</style>
+<script type="text/javascript">
+
+function val()
+{
+	var msg;
+	if(document.my.psw.value.length>5)
+		msg="good";
+	else
+		msg="poor"
+    document.getElementById('myloc').innerText=msg;
+	}
+function val1(){
+	var x= document.my.cn.value;
+	var a=/[7,8,9]+[0-9]{9}/;
+	if(x.match(a)&&x.length==10)
+		document.getElementById('c').innerHTML="valid";
+	else
+		document.getElementById('c').innerHTML="invalid";
+	}
+function valemail()
+{
+var x=document.my.email.value;
+var at=x.indexOf("@");
+var dot=x.lastIndexOf(".");
+var mail=x.slice(at+1,dot);
+
+var m1="gmail";
+if(at<1 || dot<at+2 || dot+2>=x.length || mail!=m1)
+	document.getElementById('k').innerHTML="invalid";
+else
+	document.getElementById('k').innerHTML="valid";
+}
+
+function val8()
+{
+	var x1= document.my.uname.value;
+var a=/^[a-z0-9_-]{6,14}/;
+if(x1.match(a))
+	document.getElementById('g').innerHTML="valid";
+else
+	document.getElementById('g').innerHTML="invalid";}
+	
+	function dval()
+	{
+		var da=document.getElementById('dof').value;		
+		var date=new Date(da);
+		var yr=Number(date.getFullYear());
+	
+		var dd=2000;
+		
+		if(yr>=dd )
+			document.getElementById('db').innerHTML="invalid";
+		else
+			document.getElementById('db').innerHTML="valid"; 
+		
+	}
+	function final12()
+	{
+		
+		if(document.getElementById('g').innerHTML=="valid" && document.getElementById('k').innerHTML=="valid" && document.getElementById('myloc').innerHTML=="good" && document.getElementById('rp').innerHTML=="valid" && document.getElementById('db').innerHTML=="valid"  && document.getElementById('c').innerHTML=="valid"  && document.getElementById('c').innerHTML=="valid")
+		return true;
+		else
+			{
+			alert("enter valid details");
+			return false;
+			}
+	}
+	function validpass()
+	{
+		var opa=document.my.psw.value;
+		var rpa=document.my.pswrepeat.value;
+		if(opa!=rpa)
+			document.getElementById('rp').innerHTML="password mismatch";
+		else
+			document.getElementById('rp').innerHTML="valid";
+	}
+</script>
+</head>
+<body>
+
+	<form name="my" action="Regis.html" onsubmit="return final12()">
+		<center>
+		<h1>Register</h1>
+		<p>Please fill in this form to create an account.</p>
+		<p bgcolor="#E6E6FA">
+		<table>
+			<tr>
+				<td><label for="username"><b>UserName</b></label></td>
+				<td><input type="text" placeholder="Enter username"
+					name="uname" required onkeyup="val8()" ></td><td><p id="g"></p></td>
+			</tr>
+			<tr>
+				<td><label for="name"><b>Name</b></label></td>
+				<td><input type="text" placeholder="Enter name" name="name"
+					required></td>
+			</tr>
+			<tr>
+				<td><label for="email"><b>Email</b></label></td>
+				<td><input type="text" placeholder="Enter Email" name="email"
+					required onkeyup="valemail()"></td><td><p id="k"></p></td>
+			</tr>
+
+			<tr>
+				<td><label for="psw"><b>Password</b></label></td>
+				<td><input type="password" placeholder="Enter Password"
+					name="psw" required onkeyup="val()"></td><td><p id="myloc"></p></td>
+			</tr>
+
+			<tr>
+				<td><label for="psw-repeat"><b>Repeat Password</b></label></td>
+				<td><input type="password" placeholder="Repeat Password"
+					name="pswrepeat" required onkeyup="validpass()"></td><td><p id="rp"></p></td>
+			</tr>
+
+			<tr>
+				<td><label for="dob"><b>DOB</b></label></td>
+				<td><input type="date" name="dob" id="dof" required oninput="dval()"></td><td><p id="db"></p></td>
+			</tr>
+			<tr>
+				<td><b>Gender</b></td>
+				<td><input type="radio" name="gender" value="male" checked>
+					Male<br> <input type="radio" name="gender" value="female">
+					Female<br> <input type="radio" name="gender" value="other">
+					Other<br></td>
+			</tr>
+
+
+
+			<tr>
+				<td><label for="tech"><b>languages known</b></label></td>
+				<td><input type="checkbox" name="languagesknown"
+					value="English" checked> English <input type="checkbox"
+					name="languagesknown" value="Hindi">Hindi <input
+					type="checkbox" name="languagesknown" value="Tamil">Tamil
+					<input type="checkbox" name="languagesknown" value="Telagu">Telagu
+				</td>
+			</tr>
+
+			<tr>
+				<td><label for="contact"><b>Contact Number</b></label></td>
+				<td><input type="text" name="cn" placeholder="phone number"
+					required onclick="val1()"></td><td><p id="c"></p></td></tr>
+					<tr>
+				<td><label for="file"><b>Upload</b></label></td>
+				<td><input type="file" name="cn1" 
+					></td><td><p id="c"></p></td></tr>
+					<tr>
+				<td><label for="color"><b>Favourite Color</b></label></td>
+				<td><input type="color" name="cn2" ></td><td><p id="c"></p></td></tr>
+				<tr>
+				<td><label for="color"><b>Download File</b></label></td>
+				<td><button><a href="sample.pdf" >Download PDF file</a></td><button><td><p id="c"></p></td></tr>
+		<tr>
+				<td><label for="qualification"><b>Qualification</b></label></td>
+				<td>
+				<select>
+				<option>MTech</option>
+				<option>BTech</option>
+				<option selected>Degree</option>
+				</select>
+				
+				</td>
+		</tr>
+		</center>
+		</table>
+
+<input type="submit" value="register">
+<input type="reset" value="clear">
+		</centre>
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<button><a href="sample.pdf">download</a></button>
